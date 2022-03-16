@@ -1,0 +1,31 @@
+This build guide is written based on https://github.com/nextcloud/desktop/wiki/System-requirements-for-compiling-the-desktop-client
+
+1. Install git
+2. Run "git clone https://github.com/nextcloud/desktop.git"
+3. Install "Visual Studio" ( I used "Visual Studio 2022").
+4. Run "Visual Studio Installer" and check "Desktop development C++" and install
+5. Open desktop repository with Visual Studio
+	File > Open > CMake...
+	Select CMakeLists.txt in the FileDialog window.
+6. Install vcpkg here (https://vcpkg.io/en/getting-started.html)
+	- Run "git clone https://github.com/Microsoft/vcpkg.git"
+	- Run .\vcpkg\bootstrap-vcpkg.bat
+	- Run "vcpkg integrate install"
+	Now you can install vc packages using this command
+		"vcpkg install [packages to install]"
+7. Install dependecies below.
+	- Run "vcpkg install qt5:x64-windows"
+	- Run "vcpkg install qtkeychain:x64-windows"
+	- Run "vcpkg install qt5-websockets:x64-windows"
+	- Run "vcpkg install openssl:x64-windows"
+	- Run "vcpkg install zlib:x64-windows"
+
+	****** CAUTION ************************************
+	There might be more dependencies other than above. 
+	Please install them in the same way above. 
+	You can check the dependencies errors when building.
+
+8. Please download and install "inkscape x64 windows"
+	(https://www.filehorse.com/download-inkscape-64/download/)
+
+9. Run build in Visual Studio
